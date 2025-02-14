@@ -20,7 +20,7 @@ local PowerSection = MainTab:AddSection({
 
 -- ฟังก์ชันตั้งค่าความเร็ว
 PowerSection:AddTextbox({
-    Name = "Set WalkSpeed - ตั้งค่าความเร็วในการเดิน",
+    Name = "Set WalkSpeed - ความเร็วในการเดิน",
     Default = "100", -- ค่าเริ่มต้นของความเร็วการเดิน
     TextDisappear = true,
     Callback = function(value)
@@ -41,7 +41,7 @@ PowerSection:AddTextbox({
 
 -- ฟังก์ชันตั้งค่าความสูงกระโดด
 PowerSection:AddTextbox({
-    Name = "Set JumpPower",
+    Name = "Set JumpPower - พลังกระโดด",
     Default = "100", -- ค่าเริ่มต้นสำหรับ JumpPower
     TextDisappear = true,
     Callback = function(value)
@@ -67,7 +67,7 @@ PowerSection:AddTextbox({
 
 -- ฟังก์ชันตั้งค่าความแรงของแรงดึงดูด (Gravity)
 PowerSection:AddTextbox({
-    Name = "Set Gravity",
+    Name = "Set Gravity - แรงโน้มถ่วง",
     Default = "100", -- ค่าเริ่มต้นของ Gravity (ค่ามาตรฐาน 196)
     TextDisappear = true,
     Callback = function(value)
