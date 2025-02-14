@@ -348,6 +348,7 @@ PlayerSection:AddToggle({
     end
 })
 
+-- ฟังก์ชันสำหรับแปลงพิกัดที่กรอก
 local function parseCoordinates(input)
     local x, y, z = input:match("([%-%.%d]+)[%s,xy=]*([%-%.%d]+)[%s,zy=]*([%-%.%d]+)")
 
@@ -359,6 +360,7 @@ local function parseCoordinates(input)
     end
 end
 
+-- ฟังก์ชันสำหรับวาร์ปไปยังพิกัด
 local function teleportToCoordinates(coordString)
     local player = game.Players.LocalPlayer
     local character = player.Character
@@ -368,23 +370,19 @@ local function teleportToCoordinates(coordString)
         if rootPart then
             local x, y, z = parseCoordinates(coordString)
             if x and y and z then
-                rootPart.CFrame = CFrame.new(x, y, z)
+                rootPart.CFrame = CFrame.new(x, y, z)  -- วาร์ปไปพิกัด
             end
         end
     end
 end
 
--- เพิ่มฟังก์ชันเข้าไปใน UI กลุ่ม Teleport ในแท็กหลัก
-local TeleportSection = Window:MakeTab({
-    Name = "Warp to coordinates -  วาร์ปไปหาพิกัด"
-})
-
+-- เพิ่มฟังก์ชันเข้าไปในกลุ่ม Teleport ที่มีอยู่แล้ว
 TeleportSection:AddTextbox({
-    Name = "Enter Coordinates - ใส่พิกัด",
-    Default = "x:0 y:0 z:0",
-    TextDisappear = true,
+    Name = "Warp to coordinates - วาร์ปไปพิกัด",  -- ชื่อกล่องข้อความ
+    Default = "x:0 y:0 z:0",  -- ค่าเริ่มต้น
+    TextDisappear = true,  -- ให้ข้อความหายเมื่อกรอกแล้ว
     Callback = function(coordString)
-        teleportToCoordinates(coordString)
+        teleportToCoordinates(coordString)  -- เรียกฟังก์ชันเมื่อกรอกพิกัด
     end
 })
 
