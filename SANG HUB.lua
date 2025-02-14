@@ -348,5 +348,44 @@ PlayerSection:AddToggle({
     end
 })
 
+local function parseCoordinates(input)
+    local x, y, z = input:match("([%-%.%d]+)[%s,xy=]*([%-%.%d]+)[%s,zy=]*([%-%.%d]+)")
+
+    if x and y and z then
+        return tonumber(x), tonumber(y), tonumber(z)
+    else
+        warn("รูปแบบพิกัดไม่ถูกต้อง!")
+        return nil
+    end
+end
+
+local function teleportToCoordinates(coordString)
+    local player = game.Players.LocalPlayer
+    local character = player.Character
+
+    if character then
+        local rootPart = character:FindFirstChild("HumanoidRootPart")
+        if rootPart then
+            local x, y, z = parseCoordinates(coordString)
+            if x and y and z then
+                rootPart.CFrame = CFrame.new(x, y, z)
+            end
+        end
+    end
+end
+
+-- เพิ่มฟังก์ชันเข้าไปใน UI กลุ่ม Teleport ในแท็กหลัก
+local TeleportSection = Window:MakeTab({
+    Name = "Warp to coordinates -  วาร์ปไปหาพิกัด"
+})
+
+TeleportSection:AddTextbox({
+    Name = "Enter Coordinates - ใส่พิกัด",
+    Default = "x:0 y:0 z:0",
+    TextDisappear = true,
+    Callback = function(coordString)
+        teleportToCoordinates(coordString)
+    end
+})
 
 OrionLib:Init()
