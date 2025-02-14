@@ -92,7 +92,7 @@ local connection
 
 -- เพิ่มฟังก์ชัน Noclip เปิด/ปิดในกลุ่ม Player
 PlayerSection:AddToggle({
-    Name = "Noclip",  -- ชื่อปุ่ม Toggle
+    Name = "Noclip - ทะลุกำแพง",  -- ชื่อปุ่ม Toggle
     Default = false,  -- ค่าเริ่มต้น (ปิด Noclip)
     TextDisappear = true,
     Callback = function(state)
@@ -146,7 +146,7 @@ PlayerSection:AddToggle({
 
 -- เพิ่ม Toggle สำหรับเปิด/ปิด ESP Player ในกลุ่ม Player
 PlayerSection:AddToggle({
-    Name = "ESP Player",  -- ชื่อปุ่ม Toggle
+    Name = "ESP Player - มองหาผู้เล่นทั่วแมพ",  -- ชื่อปุ่ม Toggle
     Default = false,  -- ค่าเริ่มต้น (ปิด ESP)
     TextDisappear = true,
     Callback = function(state)
@@ -260,7 +260,7 @@ end
 
 -- เพิ่มฟังก์ชันเข้าในกลุ่ม Teleport
 TeleportSection:AddTextbox({
-    Name = "Warp to player",  -- ชื่อกล่องข้อความ
+    Name = "Warp to player - วาร์ปไปหาผู่เล่น",  -- ชื่อกล่องข้อความ
     Default = "Enter Player Name",  -- ค่าเริ่มต้น (ข้อความบอกให้กรอกชื่อผู้เล่น)
     TextDisappear = true,
     Callback = function(playerName)
