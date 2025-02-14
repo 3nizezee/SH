@@ -261,7 +261,7 @@ end
 -- เพิ่มฟังก์ชันเข้าในกลุ่ม Teleport
 TeleportSection:AddTextbox({
     Name = "Warp to player - วาร์ปไปหาผู่เล่น",  -- ชื่อกล่องข้อความ
-    Default = "Enter Player Name",  -- ค่าเริ่มต้น (ข้อความบอกให้กรอกชื่อผู้เล่น)
+    Default = "Enter Player Name - กรอกชื่อผู้เล่น",  -- ค่าเริ่มต้น (ข้อความบอกให้กรอกชื่อผู้เล่น)กรอกชื่อผู้เล่น 
     TextDisappear = true,
     Callback = function(playerName)
         teleportToPlayer(playerName)  -- เรียกฟังก์ชันเมื่อกรอกชื่อ
@@ -340,7 +340,7 @@ end
 
 -- เพิ่มปุ่ม Toggle เข้า UI กลุ่ม Player
 PlayerSection:AddToggle({
-    Name = "Show Coordinates",
+    Name = "Show Coordinates - แสดงพิกัด",
     Default = false,
     Callback = function(state)
         showCoordinates = state
