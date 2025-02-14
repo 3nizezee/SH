@@ -13,14 +13,14 @@ local MainTab = Window:MakeTab({
     Name = "Main",
 })
 
--- สร้างกลุ่ม Power (ในแท็บเดียว)
+-- สร้างกลุ่ม Power (ในแท็บหลัก)
 local PowerSection = MainTab:AddSection({
     Name = "Power",  -- ชื่อกลุ่ม Power
 })
 
 -- ฟังก์ชันตั้งค่าความเร็ว
 PowerSection:AddTextbox({
-    Name = "Set WalkSpeed",
+    Name = "Set WalkSpeed - ตั้งค่าความเร็วในการเดิน",
     Default = "100", -- ค่าเริ่มต้นของความเร็วการเดิน
     TextDisappear = true,
     Callback = function(value)
